@@ -7,7 +7,24 @@
 	<key>connections</key>
 	<dict>
 		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5016F899-AEC4-4CF2-8403-2E5FFE9AB150</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7D294FE-7F7A-4483-8B91-E3B2D9276D8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>CA4E3B7A-DC9E-45BF-99B7-087C374C4377</key>
 		<array>
 			<dict>
@@ -52,6 +69,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5016F899-AEC4-4CF2-8403-2E5FFE9AB150</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -59,7 +91,7 @@
 				<key>keyword</key>
 				<string>dblp</string>
 				<key>queuedelaycustom</key>
-				<integer>5</integer>
+				<integer>10</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
@@ -84,6 +116,31 @@ print(DBLP.query_paper("{query}"));</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E7D294FE-7F7A-4483-8B91-E3B2D9276D8F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -132,7 +189,7 @@ print(DBLP.query_bib("{query}"));</string>
 				<key>keyword</key>
 				<string>dblpbib</string>
 				<key>queuedelaycustom</key>
-				<integer>5</integer>
+				<integer>10</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
@@ -143,7 +200,7 @@ print(DBLP.query_bib("{query}"));</string>
 				<string>DBLP searching...</string>
 				<key>script</key>
 				<string>import DBLP;
-print(DBLP.query_paper("{query}"));</string>
+print(DBLP.query_paper("{query}", True));</string>
 				<key>subtext</key>
 				<string>DBLP</string>
 				<key>title</key>
@@ -190,30 +247,40 @@ print(DBLP.query_paper("{query}"));</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>5016F899-AEC4-4CF2-8403-2E5FFE9AB150</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
 		<key>640D4C93-37A4-43FA-8E6C-2EC86B805BA9</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>420</real>
 		</dict>
 		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
 		<dict>
 			<key>ypos</key>
-			<real>40</real>
+			<real>60</real>
 		</dict>
 		<key>966BC1B4-441B-416B-B8BB-E6E21C8C8065</key>
 		<dict>
 			<key>ypos</key>
-			<real>140</real>
+			<real>270</real>
 		</dict>
 		<key>CA4E3B7A-DC9E-45BF-99B7-087C374C4377</key>
 		<dict>
 			<key>ypos</key>
-			<real>190</real>
+			<real>330</real>
 		</dict>
 		<key>E6B9A806-5038-4F23-B94F-A3F8CD317F04</key>
 		<dict>
 			<key>ypos</key>
-			<real>190</real>
+			<real>330</real>
+		</dict>
+		<key>E7D294FE-7F7A-4483-8B91-E3B2D9276D8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

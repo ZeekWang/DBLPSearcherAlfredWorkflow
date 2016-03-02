@@ -8,7 +8,7 @@
 #
 #################################
 
-
+import urllib
 import urllib2
 import json
 import sys
@@ -22,8 +22,8 @@ def item(title, sub_title = "", for_next = None, icon="icon.png"):
     for_next = for_next or title;
     return alfred.Item({"arg": for_next}, title, sub_title, icon);
 
-def query_paper(query):
-    url = "http://dblp.uni-trier.de/search/publ/inc?q=" + query;
+def query_paper(query, for_bib=False):
+    url = "http://dblp.uni-trier.de/search/publ/inc?q=" + urllib.quote(query);
     html = pq(urllib2.urlopen(url).read());
     article_eles = html(".article");
     output = [];
@@ -36,9 +36,13 @@ def query_paper(query):
         for j in range(len(author_eles)):
             author_names.append(author_eles.eq(j).text());
         authors = ", ".join(author_names);
-        output.append(item(title, authors, id));
+        if for_bib == True:
+            output.append(item(title, authors, id));
+        else:
+            output.append(item(title, authors));
     xml = alfred.xml(output)
     return xml;
+
 
 def query_bib(id):
     url = "http://dblp.uni-trier.de/rec/bibtex/" + id;
@@ -50,5 +54,5 @@ def query_bib(id):
     return bib_text;
 
 if __name__ == '__main__':
-    # query_paper("microblog");
-    query_bib("conf/edbt/Sellam0KA16")
+    query_paper("seam carving", True);
+    # query_bib("conf/edbt/Sellam0KA16")
