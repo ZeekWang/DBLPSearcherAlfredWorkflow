@@ -1,5 +1,7 @@
 # DBLP Searcher Alfred Workflow
 
+Search computer science literatures in DBLP (http://dblp.uni-trier.de/).
+
 ## Requirements
 
 - Alfred App v2
